@@ -1,0 +1,23 @@
+{% extends "layoutPadrao.html" %}
+
+{% block title %} Página de consultas {% endblock %}
+
+{% block conteudo %}
+	<h1>Médico : {{medico.nome}}</h1>
+	{% for consulta in consultas %}
+	<table class="table">
+		<tr>
+			<td>Data da Consulta</td>
+			<td>Convenio</td>
+			<td>Valor</td>
+			<td>Paciente</td>
+		</tr>
+		<tr>
+			<td>{{consulta.data}}</td>
+			<td>{{consulta.convenio}}</td>
+			<td>{{consulta.valor}}</td>
+			<td>{{consulta.paciente}}</td>
+		</tr>
+	</table>
+	{% endfor %}
+{% endblock %}

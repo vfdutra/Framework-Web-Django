@@ -1,0 +1,18 @@
+{% extends "layoutPadrao.html" %}
+
+{% block title %} Página de Médicos {% endblock %}
+
+{% block conteudo %}
+	<h1>Médicos : </h1>
+	{% for medico in medicos %}
+	<div>
+		<h4><b>Nome</b> : {{medico.nome}}</h4>
+		<p><b>CPF</b> : {{medico.cpf}}</p>
+		<p><b>Email</b> : {{medico.email}}</p>
+		<p><b>Telefone</b> : {{medico.telefone}}</p>
+		<p><b>CRM</b> : {{medico.crm}}</p>
+		<p><b>Especialidade</b> : {{medico.especialidade}}</p>
+		<a class="btn btn-primary" role="button" href="{% url 'verMedico' medico.id %}"> Veja as consultas do médico </a><br><br>
+	</div>
+	{% endfor %}
+{% endblock %}

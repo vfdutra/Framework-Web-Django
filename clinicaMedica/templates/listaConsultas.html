@@ -1,0 +1,16 @@
+{% extends "layoutPadrao.html" %}
+
+{% block title %} Página de Consultas {% endblock %}
+
+{% block conteudo %}
+	<h1>Consultas : </h1>
+	{% for consulta in consultas %}
+	<div>
+		<h4><b>Data</b> : {{consulta.data}}</h4>
+		<p><b>Convenio</b> : {{consulta.convenio}}</p>
+		<p><b>Valor</b> : {{consulta.valor}}</p>
+		<p><b>Médico Responsável</b>: {{consulta.medico}}</p>
+		<p><b>Paciente</b> : {{consulta.paciente}}</p>
+	</div>
+	{% endfor %}
+{% endblock %}

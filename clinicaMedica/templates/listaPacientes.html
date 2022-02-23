@@ -1,0 +1,18 @@
+{% extends "layoutPadrao.html" %}
+
+{% block title %} Página de Pacientes {% endblock %}
+
+{% block conteudo %}
+	<h1>Pacientes : </h1>
+	{% for paciente in pacientes %}
+	<div>
+		<h4><b>Nome</b> : {{paciente.nome}}</h4>
+		<p><b>CPF</b> : {{paciente.cpf}}</p>
+		<p><b>Email</b> : {{paciente.email}}</p>
+		<p><b>Telefone</b> : {{paciente.telefone}}</p>
+		<p><b>Endereço</b> : {{paciente.endereco}}</p>
+		<p><b>Idade</b> : {{paciente.idade}}</p>
+		<a class="btn btn-primary" role="button" href="{% url 'verPaciente' paciente.id %}"> Veja as consultas do paciente </a><br><br>
+	</div>
+	{% endfor %}
+{% endblock %}
